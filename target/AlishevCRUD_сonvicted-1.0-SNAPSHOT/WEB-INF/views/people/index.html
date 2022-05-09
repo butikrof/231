@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<body>
+
+
+
+
+
+<a href="/people/new">Create new person</a>
+<br/>
+<hr/>
+
+<table border="1" bordercolor="grey">
+    <caption>Spisok zalychennih</caption>
+    <tr>
+        <th>id</th>
+        <th>Name</th>
+        <th>Familia</th>
+        <th>Data rojdeniy</th>
+        <th>Statya</th>
+        <th>Nachalo sroka</th>
+        <th>Naznachen srok</th>
+        <th>Status</th>
+    </tr>
+
+    <div th:each="person : ${people}">
+
+        <tr>
+        <td> <a th:href="@{/people/{id}(id=${person.getId()})}"
+                th:text="${person.getId()}">user</a></td>
+
+        <td><a th:href="@{/people/{id}(id=${person.getId()})}"
+               th:text="${person.getName()}">user</a></td>
+
+        <td><a th:href="@{/people/{id}(id=${person.getId()})}"
+               th:text="${person.getSurname()}">user</a></td>
+
+        <td><a th:href="@{/people/{id}(id=${person.getId()})}"
+               th:text="${person.getDateOfBirth()}">user</a></td>
+
+        <td><a th:href="@{/people/{id}(id=${person.getId()})}"
+               th:text="${person.getArticle()}">user</a></td>
+
+        <td><a th:href="@{/people/{id}(id=${person.getId()})}"
+               th:text="${person.getArrivalDate()}">user</a></td>
+
+        <td><a th:href="@{/people/{id}(id=${person.getId()})}"
+               th:text="${person.getAppointedTime()}">user</a></td>
+
+        <td><a th:href="@{/people/{id}(id=${person.getId()})}"
+               th:text="${person.getDemeanor()}">user</a></td>
+
+    </tr>
+  </table>
+</div>
+
+<br/>
+<hr/>
+
+
+
+</body>
+</html>
+
+
+
+
+<!--
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<body>
+
+
+
+<div th:each="person : ${people}">
+    <a th:href="@{/people/{id}(id=${person.getId()})}"
+       th:text="${person.getId() + ', ' + person.getName()+ ', ' + person.getSurname()+ ', ' + person.getDateOfBirth()+ ', ' + person.getArticle()+ ', ' + person.getArrivalDate()+ ', ' + person.getAppointedTime()+ ', ' + person.getDemeanor()}">user</a>
+
+</div>
+
+
+<br/>
+<hr/>
+
+<a href="/people/new">Create new person</a>
+
+</body>
+</html>
+-->
+
+
+<!--th:text="${person.getName()}" th:text="${person.getSurname()}" th:text="${person.getDateOfBirth()}" th:text="${person.getArticle()}" th:text="${person.getArrivalDate()}" th:text="${person.getAppointedTime()}" th:text="${person.getDemeanor()}";-->
+
+<!--th:text="${person.getName()}" th:text="${person.getSurname()}" th:text="${person.getDateOfBirth()}" th:text="${person.getArticle()}" th:text="${person.getArrivalDate()}" th:text="${person.getAppointedTime()}" th:text="${person.getDemeanor()}";-->
